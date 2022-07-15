@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<!-- About-->
+<section class="about-section text-center" id="about">
+    
+                
+                <hr>
+                {% for posts in posts.all %}
+                    <a href="{% url 'detail' posts.id %}">
+                        <h3>{{posts.title}}</h3>
+                    </a>
+                    <b><p>{{posts.writer}}</p></b>
+                    <i><p>{{posts.pub_date}}</p></i><hr>
+                {% endfor %}
+                {% endblock %}
+        
+</section>
