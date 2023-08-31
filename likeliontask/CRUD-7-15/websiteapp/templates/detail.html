@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                    <h2>Detail</h2>
+                    <h3>제목 : {{post.title}}</a></h3>
+                    <p>작성자 : {{post.writer}}</p>
+                    <p>날짜 : {{post.pub_date}}</p>
+                    <p>기분 : {{post.feelings}}</p>
+                    <p>내용 : {{post.body}}</p>
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" width="250" height="250" alt="image"> 
+                    {% endif %}
+                    <br>
+                    <a href="{% url 'edit' post.id %}">수정하기</a>
+                    <a href="{% url 'delete' post.id %}">삭제하기</a>
+                </div>
+            </div>
+        </div>
+            </section>
+            {% endblock %}
+            
